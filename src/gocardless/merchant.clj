@@ -15,3 +15,9 @@
   (-> (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)
       (client/get)
       (keywordize-keys)))
+
+(defn get-users
+  []
+  (-> (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")
+      (client/get)
+      (keywordize-keys)))
