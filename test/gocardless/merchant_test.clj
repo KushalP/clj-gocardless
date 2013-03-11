@@ -1,4 +1,4 @@
-(ns gocardless.account-test
+(ns gocardless.merchant-test
   (:use clojure.test
         gocardless.merchant)
   (:require [betamax.core :as betamax]))
