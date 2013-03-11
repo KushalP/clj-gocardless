@@ -6,6 +6,4 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [clj-http "0.6.5"]]
   :profiles {:dev {:dependencies [[betamax "0.1.3"]]}}
-  :test-selectors {:default  #(not (:integration %))
-                   :integration :integration
-                   :all (constantly true)})
+  :test-selectors {:default (constantly true)})
