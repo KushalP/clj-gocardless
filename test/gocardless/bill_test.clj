@@ -4,6 +4,7 @@
 
 (deftest create-a-bill
   (testing "pre-condition makes sure we're passing in BigDecimals"
-    (is (thrown? AssertionError (create-bill :name "not a BigDecimal" :amount "this fails"))))
+    (is (thrown? AssertionError (create-bill "this fails" :name "not a BigDecimal"))))
   (testing "passes and builds out the map"
-    (is (= {:name "Test", :amount 1.34M} (create-bill :name "Test" :amount (bigdec 1.34))))))
+    (is (= {:name "Test" :amount 1.34M :description nil}
+           (create-bill (bigdec 1.34) :name "Test")))))
