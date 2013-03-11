@@ -1,6 +1,6 @@
-(ns gocardless.account-test
+(ns clj-gocardless.account-test
   (:use clojure.test
-        gocardless.account))
+        clj-gocardless.account))
 
 (deftest binds-with-account
   (testing "account is nil when accessed directly"

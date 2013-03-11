@@ -1,4 +1,4 @@
-(defproject gocardless "0.1.0-SNAPSHOT"
+(defproject clj-gocardless "0.1.0-SNAPSHOT"
   :description "Clojure bindings for Go Cardless"
   :url "https://github.com/KushalP/gocardless-clj"
   :license {:name "Eclipse Public License"

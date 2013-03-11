@@ -1,4 +1,4 @@
-(ns gocardless.bill)
+(ns clj-gocardless.bill)
 
 (defonce bill-endpoint "/bills/%s")
 

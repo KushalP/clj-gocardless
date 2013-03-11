@@ -1,4 +1,4 @@
-(ns gocardless.account)
+(ns clj-gocardless.account)
 
 (defonce ^:dynamic *gocardless-account* nil)
 

@@ -1,6 +1,6 @@
-(ns gocardless.account-test
+(ns clj-gocardless.bill-test
   (:use clojure.test
-        gocardless.bill))
+        clj-gocardless.bill))
 
 (deftest create-a-bill
   (testing "pre-condition makes sure we're passing in BigDecimals"

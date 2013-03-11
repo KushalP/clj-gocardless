@@ -1,6 +1,6 @@
-(ns gocardless.merchant
+(ns clj-gocardless.merchant
   (:use clojure.walk
-        gocardless.account)
+        clj-gocardless.account)
   (:require [clj-http.client :as client]))
 
 (defonce ^:dynamic *gocardless-merchant* nil)

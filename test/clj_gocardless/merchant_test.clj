@@ -1,6 +1,6 @@
-(ns gocardless.merchant-test
+(ns clj-gocardless.merchant-test
   (:use clojure.test
-        gocardless.merchant)
+        clj-gocardless.merchant)
   (:require [betamax.core :as betamax]))
 
 (deftest binds-with-merchant
