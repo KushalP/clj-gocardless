@@ -1,4 +1,7 @@
-(ns gocardless.merchant)
+(ns gocardless.merchant
+  (:use clojure.walk
+        gocardless.account)
+  (:require [clj-http.client :as client]))
 
 (defonce ^:dynamic *gocardless-merchant* nil)
 
@@ -6,3 +9,9 @@
   "Binds the specified Go Cardless merchant id to the gocardless-merchant variable and executes the body."
   [id & body]
   `(binding [*gocardless-merchant* ~id] ~@body))
+
+(defn get-details
+  []
+  (-> (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)
+      (client/get)
+      (keywordize-keys)))
