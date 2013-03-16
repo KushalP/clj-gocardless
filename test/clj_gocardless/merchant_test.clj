@@ -17,11 +17,9 @@
       (testing "get-details"
         (is (= "Tom"
                (-> (with-merchant "WOQRUJU9OH2HH1" (get-details))
-                   :body
                    :first_name))))
       (testing "get-users"
         (is (= "customer40@gocardless.com"
                (-> (with-merchant "WOQRUJU9OH2HH1" (get-users))
-                   :body
                    first
                    :email)))))))

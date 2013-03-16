@@ -1,7 +1,6 @@
 (ns clj-gocardless.merchant
-  (:use clojure.walk
-        clj-gocardless.account)
-  (:require [clj-http.client :as client]))
+  (:use clj-gocardless.account)
+  (:require [clj-gocardless.network :as network]))
 
 (defonce ^:dynamic *gocardless-merchant* nil)
 
@@ -12,12 +11,15 @@
 
 (defn get-details
   []
-  (-> (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)
-      (client/get)
-      (keywordize-keys)))
+  (network/get
+   (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)))
 
 (defn get-users
   []
-  (-> (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")
-      (client/get)
-      (keywordize-keys)))
+  (network/get
+   (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")))
+
+(defn get-subscriptions
+  []
+  (network/get
+   (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/subscriptions")))
