@@ -18,6 +18,9 @@ Only basic merchant `GET` requests are available at the moment.
 
 (merchant/with-merchant "WOQRUJU9OH2HH1"
   (get-users))
+
+(merchant/with-merchant "WOQRUJU9OH2HH1"
+  (get-subscriptions))
 ```
 
 ## License
