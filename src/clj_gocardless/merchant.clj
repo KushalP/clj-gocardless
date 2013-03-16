@@ -11,15 +11,15 @@
 
 (defn get-details
   []
-  (network/get
+  (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)))
 
 (defn get-users
   []
-  (network/get
+  (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")))
 
 (defn get-subscriptions
   []
-  (network/get
+  (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/subscriptions")))
