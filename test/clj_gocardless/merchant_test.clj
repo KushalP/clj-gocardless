@@ -27,4 +27,9 @@
         (is (= "London Gym Membership"
                (-> (with-merchant "WOQRUJU9OH2HH1" (get-subscriptions))
                    first
-                   :name)))))))
+                   :name))))
+      (testing "get-bills"
+        (is (= "GBP"
+               (-> (with-merchant "WOQRUJU9OH2HH1" (get-bills))
+                   first
+                   :currency)))))))

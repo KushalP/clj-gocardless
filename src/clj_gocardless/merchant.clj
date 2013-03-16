@@ -23,3 +23,8 @@
   []
   (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/subscriptions")))
+
+(defn get-bills
+  []
+  (network/get-json
+   (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/bills")))
