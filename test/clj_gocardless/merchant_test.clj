@@ -22,4 +22,9 @@
         (is (= "customer40@gocardless.com"
                (-> (with-merchant "WOQRUJU9OH2HH1" (get-users))
                    first
-                   :email)))))))
+                   :email))))
+      (testing "get-subscriptions"
+        (is (= "London Gym Membership"
+               (-> (with-merchant "WOQRUJU9OH2HH1" (get-subscriptions))
+                   first
+                   :name)))))))
