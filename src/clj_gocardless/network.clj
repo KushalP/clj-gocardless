@@ -1,4 +1,4 @@
-(ns clj-gocardless.util
+(ns clj-gocardless.network
   (:use clojure.walk)
   (:require [clj-http.client :as client]))
 
