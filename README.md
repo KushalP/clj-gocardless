@@ -14,13 +14,13 @@ Only basic merchant `GET` requests are available at the moment.
 (:require [clj-gocardless.merchant :as merchant])
 
 (merchant/with-merchant "WOQRUJU9OH2HH1"
-  (get-details))
+  (merchant/get-details))
 
 (merchant/with-merchant "WOQRUJU9OH2HH1"
-  (get-users))
+  (merchant/get-users))
 
 (merchant/with-merchant "WOQRUJU9OH2HH1"
-  (get-subscriptions))
+  (merchant/get-subscriptions))
 ```
 
 ## License
