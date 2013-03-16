@@ -1,9 +1,9 @@
 (ns clj-gocardless.network
-  (:use clojure.walk)
-  (:require [clj-http.client :as client]))
+  (:require [clj-http.client :as client]
+            [cheshire.core :refer :all]))
 
-(defn get [url]
+(defn get-json [url]
   (-> url
       (client/get)
-      (keywordize-keys)
-      :body))
+      :body
+      (parse-string true)))
