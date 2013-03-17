@@ -15,9 +15,12 @@
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)))
 
 (defn get-users
-  []
-  (network/get-json
-   (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")))
+  ([]
+     (network/get-json
+      (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")))
+  ([id]
+     (network/get-json
+      (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users" "/" id))))
 
 (defn get-subscriptions
   []

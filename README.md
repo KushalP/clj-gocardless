@@ -20,6 +20,9 @@ Only basic merchant `GET` requests are available at the moment.
   (merchant/get-users))
 
 (merchant/with-merchant "WOQRUJU9OH2HH1"
+  (merchant/get-users 1))
+
+(merchant/with-merchant "WOQRUJU9OH2HH1"
   (merchant/get-subscriptions))
 ```
 
