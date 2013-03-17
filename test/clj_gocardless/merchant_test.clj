@@ -14,25 +14,25 @@
 (deftest ^{:integration true} merchant-integration
   (betamax/with-cassette "gocardless-merchant"
     (testing "merchant operations"
-      (testing "get-details"
+      (testing "details"
         (is (= "Tom"
-               (-> (with-merchant "WOQRUJU9OH2HH1" (get-details))
+               (-> (with-merchant "WOQRUJU9OH2HH1" (details))
                    :first_name))))
-      (testing "get-users"
+      (testing "users"
         (is (= "customer40@gocardless.com"
-               (-> (with-merchant "WOQRUJU9OH2HH1" (get-users))
+               (-> (with-merchant "WOQRUJU9OH2HH1" (users))
                    first
                    :email)))
         (is (= "customer40@gocardless.com"
-               (-> (with-merchant "WOQRUJU9OH2HH1" (get-users 1))
+               (-> (with-merchant "WOQRUJU9OH2HH1" (users 1))
                    :email))))
-      (testing "get-subscriptions"
+      (testing "subscriptions"
         (is (= "London Gym Membership"
-               (-> (with-merchant "WOQRUJU9OH2HH1" (get-subscriptions))
+               (-> (with-merchant "WOQRUJU9OH2HH1" (subscriptions))
                    first
                    :name))))
-      (testing "get-bills"
+      (testing "bills"
         (is (= "GBP"
-               (-> (with-merchant "WOQRUJU9OH2HH1" (get-bills))
+               (-> (with-merchant "WOQRUJU9OH2HH1" (bills))
                    first
                    :currency)))))))

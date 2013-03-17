@@ -9,12 +9,12 @@
   [id & body]
   `(binding [*gocardless-merchant* ~id] ~@body))
 
-(defn get-details
+(defn details
   []
   (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant*)))
 
-(defn get-users
+(defn users
   ([]
      (network/get-json
       (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users")))
@@ -22,12 +22,12 @@
      (network/get-json
       (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/users" "/" id))))
 
-(defn get-subscriptions
+(defn subscriptions
   []
   (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/subscriptions")))
 
-(defn get-bills
+(defn bills
   []
   (network/get-json
    (str *gocardless-url* api-path "/merchants/" *gocardless-merchant* "/bills")))
